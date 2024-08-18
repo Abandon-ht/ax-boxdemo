@@ -5,12 +5,10 @@
 3. 执行./run.sh
 
 ## 如何编译？
-1. cd app/demo/src/ppl/box
-2. make p=xxx clean
-3. make p=xxx
-4. make p=xxx install
-> p=xxx 指定编译项目名，示例：make p=AX650_emmc
-
+1. export PATH=/opt/gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu/bin:$PATH
+2. mkdir build & cd build
+3. cmake -DSDK_PATH=${SDK_DIR} -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../toolchains/aarch64-none-linux-gnu.toolchain.cmake ..
+4. make -j6
 # <a href="#配置参数">配置参数</a>
 
 |   #   |             参数       |   参数范围   |                          说明           |
