@@ -13,8 +13,14 @@ set(ROOTFS_TARGET_PATH "${HOME_PATH}/msp/out")
 
 # Source files
 file(GLOB_RECURSE SRCCPPS
-        "${CUR_PATH}/*.cpp"
-        "${CUR_PATH}/src"
+        "${CUR_PATH}/demo/src/*.cpp"
+        "${CUR_PATH}/src/api/*.cpp"
+        "${CUR_PATH}/src/mgr/*.cpp"
+        "${CUR_PATH}/src/utils/*.cpp"
+        "${CUR_PATH}/src/inference/*.cpp"
+        "${CUR_PATH}/src/pipeline/*.cpp"
+        "${CUR_PATH}/src/pipeline/hvcfp/*.cpp"
+        "${CUR_PATH}/src/tracker/*.cpp"
         "${DEMO_SRC_PATH}/rtsp/AXRTSPClient.cpp"
         "${DEMO_SRC_PATH}/vdec/*.cpp"
         "${DEMO_SRC_PATH}/vdec/stream/*.cpp"
@@ -38,7 +44,10 @@ file(GLOB_RECURSE SRCCPPS
 
 # Include directories
 include_directories(
-        "${CUR_PATH}/include"
+        "${CUR_PATH}/inc"
+        "${CUR_PATH}/src"
+        "${CUR_PATH}/src/3rdparty/eigen3"
+        "${CUR_PATH}/demo/include"
         "${ROOTFS_TARGET_PATH}/include"
         "${DEMO_SRC_PATH}/header"
         "${DEMO_SRC_PATH}/rtsp"
@@ -95,7 +104,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
         ax_ivps
         ax_venc
         ax_engine
-        ax_skel
         ax_vo
         drm
         swresample
