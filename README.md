@@ -1,8 +1,11 @@
 #BoxDemo
 ## 如何执行？
-1. cd /opt/bin/BoxDemo
+1. cd /root
+2. mkdir -p Workspace && cd Workspace
+3. Upload the 'lib' & 'res' folders to /root/Workspace
+4. Upload the 'BoxDemo' files to /root/Workspace
 2. vi box.conf 配置日志级别以及检测开关等。[参数说明](#配置参数)
-3. 执行./run.sh
+3. 执行 LD_LIBRARY_PATH=./lib ./BoxDemo
 
 ## 如何编译？
 1. export PATH=/opt/gcc-arm-9.2-2019.12-x86_64-aarch64-none-linux-gnu/bin:$PATH
