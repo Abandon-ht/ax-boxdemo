@@ -3,7 +3,7 @@
 1. cd /root
 2. mkdir -p Workspace && cd Workspace
 3. Upload the 'lib' & 'res' folders to /root/Workspace
-4. Upload the 'BoxDemo' files to /root/Workspace
+4. Upload the 'BoxDemo' & 'box.conf' files to /root/Workspace
 2. vi box.conf 配置日志级别以及检测开关等。[参数说明](#配置参数)
 3. 执行 LD_LIBRARY_PATH=./lib ./BoxDemo
 
