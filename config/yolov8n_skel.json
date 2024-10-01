@@ -1,0 +1,53 @@
+{
+  "input": "/data/model/yolov8n.onnx",
+  "output_dir": "output",
+  "output_name": "compiled.axmodel",
+  "work_dir": "",
+  "model_type": "ONNX",
+  "target_hardware": "AX650",
+  "npu_mode": "NPU3",
+  "quant": {
+    "input_configs": [
+      {
+        "tensor_name": "images",
+        "calibration_dataset": "/data/dataset/coco_1000.tar",
+        "calibration_format": "Image",
+        "calibration_size": 128,
+	"calibration_mean": [0, 0, 0],
+	"calibration_std": [255, 255, 255]
+      }
+    ],
+    "calibration_method": "MinMax",
+    "precision_analysis": true
+  },
+  "input_processors": [
+    {
+      "tensor_name": "images",
+      "tensor_format": "RGB",
+      "tensor_layout": "NCHW",
+      "src_format": "YUV420SP",
+      "src_layout": "NHWC",
+      "src_dtype": "U8",
+      "csc_mode": "Matrix",
+      "csc_mat": [1.164, 0, 1.596, -222.912, 1.164, -0.392, -0.813, 135.616, 1.164, 2.017, 0, -276.8]
+    }
+  ],
+  "output_processors": [
+    {
+      "tensor_name": "output0",
+      "dst_perm": [0, 2, 3, 1]
+    },
+    {
+      "tensor_name": "344",
+      "dst_perm": [0, 2, 3, 1]
+    },
+    {
+      "tensor_name": "359",
+      "dst_perm": [0, 2, 3, 1]
+    }
+  ],
+  "compiler": {
+    "check": 2
+  }
+}
+
