@@ -128,5 +128,12 @@ target_link_directories(${PROJECT_NAME} PRIVATE
         "${THIRD_PARTY_PATH}/drm/lib"
 )
 
+# Set RPATH
+set_target_properties(${PROJECT_NAME} PROPERTIES
+        BUILD_WITH_INSTALL_RPATH TRUE
+        INSTALL_RPATH "$ORIGIN/lib"
+        INSTALL_RPATH_USE_LINK_PATH TRUE
+)
+
 # Install target
-install(TARGETS ${PROJECT_NAME} DESTINATION "${ROOTFS_TARGET_PATH}/bin/BoxDemo")
+install(TARGETS ${PROJECT_NAME} DESTINATION "${CMAKE_SOURCE_DIR}/bin")
