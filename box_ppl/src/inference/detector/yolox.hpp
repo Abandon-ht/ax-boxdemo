@@ -113,7 +113,7 @@ namespace skel {
                     auto ptr = (float*)output.pVirAddr;
                     int32_t stride = (1 << i) * 8;
                     skel::detection::generate_proposals_yolov8_native(stride, ptr, m_config.cls_thresh,
-                                                              proposals, 640, 640);
+                                                              proposals, 1024, 576);
                 }
 
                 // nms & rescale coords & select class

@@ -48,15 +48,15 @@ static AX_VOID SkelResultCallback(AX_SKEL_HANDLE pHandle, AX_SKEL_RESULT_T *pstR
             continue;
         }
 
-        if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "body")) {
+        if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "person")) {
             fhvp.item[index].eType = DETECT_TYPE_BODY;
-        } else if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "vehicle")) {
+        } else if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "car")) {
             fhvp.item[index].eType = DETECT_TYPE_VEHICLE;
-        } else if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "cycle")) {
+        } else if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "bicycle")) {
             fhvp.item[index].eType = DETECT_TYPE_CYCLE;
-        } else if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "face")) {
+        } else if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "bus")) {
             fhvp.item[index].eType = DETECT_TYPE_FACE;
-        } else if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "plate")) {
+        } else if (0 == strcmp(pstResult->pstObjectItems[i].pstrObjectCategory, "truck")) {
             fhvp.item[index].eType = DETECT_TYPE_PLATE;
         } else {
             LOG_M_W(DETECTOR, "unknown detect result %s of vdGrp %d frame %lld (skel %lld)",
