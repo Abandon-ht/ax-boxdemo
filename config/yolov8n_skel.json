@@ -1,7 +1,7 @@
 {
-  "input": "/data/model/yolov8n.onnx",
-  "output_dir": "output",
-  "output_name": "compiled.axmodel",
+  "input": "/data/onnx/yolov8n_skel.onnx",
+  "output_dir": "yolov8n_skel",
+  "output_name": "ax_ax650_hvcfp_algo_model_V1.0.2.axmodel",
   "work_dir": "",
   "model_type": "ONNX",
   "target_hardware": "AX650",
